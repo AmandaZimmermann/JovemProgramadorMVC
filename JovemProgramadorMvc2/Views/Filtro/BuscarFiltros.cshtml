@@ -1,0 +1,49 @@
+﻿@model AlunoModel
+
+<form asp-controller="Aluno" asp-action="Index" method="post" class="mb-3">
+    <div class="mb-3">
+        <label for="idade" class="form-label">Idade</label>
+        <div class="d-flex">
+            <input type="text" asp-for="Idade" class="form-control col-md-1 mr-3">
+            <select asp-for="Operacao" class="form-select" aria-label="Default select example">
+                <option selected>Selecione uma opção</option>
+                <option value="=">Idade igual à</option>
+                <option value=">">Idade maior que</option>
+                <option value="<">Idade menor que</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="text-left">
+        <button type="submit" class="btn btn-primary col-1">Buscar</button>
+    </div>
+</form>
+<form asp-controller="Aluno" asp-action="Index" method="post" class="mb-3">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control col-md-1">
+    </div>
+
+    <div class="text-left">
+        <button type="submit" class="btn btn-primary col-1">Buscar</button>
+    </div>
+</form>
+<form asp-controller="Aluno" asp-action="Index" method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Contato</label>
+        <input type="text" asp-for="Contato" class="form-control col-md-1">
+    </div>
+
+    <div class="text-left">
+        <button type="submit" class="btn btn-primary col-1">Buscar</button>
+    </div>
+</form>
+
+<div class="text-center">
+    <a class="btn btn-primary col-1" role="button" asp-controller="Aluno" asp-action="Index">Voltar</a>
+</div>
+
+
+
+
+

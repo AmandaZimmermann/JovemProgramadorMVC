@@ -1,0 +1,73 @@
+﻿@model List<AlunoModel>
+
+@if (ViewData["Mensagem"] != null)
+{
+    <div class="alert-danger">
+        @ViewData["Mensagem"]
+    </div>
+}
+
+@if (TempData["Mensagem2"] != null)
+{
+    <div class="alert-success">
+        @TempData["Mensagem2"]
+    </div>
+}
+
+@if (TempData["Mensagem3"] != null)
+{
+    <div class="alert-success">
+        @TempData["Mensagem3"]
+    </div>
+}
+
+<div class="text-left">
+
+    <div>
+        <h1>Dados dos Alunos</h1>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Contato</th>
+                <th scope="col">Email</th>
+                <th scope="col">Cep</th>
+                <th scope="col">Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (AlunoModel aluno in Model)
+                {
+                    <tr>
+                        <td> @aluno.Nome</td>
+                        <td> @aluno.Idade</td>
+                        <td> @aluno.Contato</td>
+                        <td> @aluno.Email</td>
+                        <td> @aluno.Cep</td>
+
+                        <td>
+                            <div>
+                                <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="@aluno.Cep">Endereço</a>
+                                <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Editar" asp-route-id="@aluno.Id">Editar</a>
+                                <a class="btn btn-danger" type="button" asp-controller="Aluno" asp-action="Excluir" asp-route-id="@aluno.Id">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <div class="text-center" >
+        <a class="btn btn-primary" type="button" asp-controller="Aluno" asp-action="Adicionar">Adicionar Aluno</a>
+        <a class="btn btn-primary" type="button" asp-controller="Filtro" asp-action="BuscarFiltros">Filtros</a>
+        <a class="btn btn-primary" type="button" asp-controller="Home" asp-action="Index">Voltar</a>
+    </div>
+
+</div>
+

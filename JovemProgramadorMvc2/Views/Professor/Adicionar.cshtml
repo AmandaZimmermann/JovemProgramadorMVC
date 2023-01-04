@@ -1,0 +1,27 @@
+﻿<form asp-action="">
+    <div class="mb-3">
+        <label for="Nome" class="form-label">Nome</label>
+        <input type="text" class="form-control col-md-5" required>
+    </div>
+    <div class="mb-3">
+        <label for="Idade" class="form-label">Idade</label>
+        <input type="text" class="form-control col-md-1">
+    </div>
+    <div class="mb-3">
+        <label for="Contato" class="form-label">Contato</label>
+        <input type="text" class="form-control col-md-2" placeholder="(00)00000-0000">
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control col-md-5" aria-describedby="emailHelp" placeholder="jovemprogramador@gmail.com">
+    </div>
+    <div class="mb-3">
+        <label for="Cep" class="form-label">Cep</label>
+        <input type="text" class="form-control col-md-2" placeholder="00000-000">
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-primary btn-lg" role="button" asp-controller="Aluno" asp-action="Mensagens">Adicionar</button>
+        <a type="button" asp-controller="Professor" asp-action="Index" class="btn btn-secondary btn-lg">Voltar</a>
+    </div>
+</form>

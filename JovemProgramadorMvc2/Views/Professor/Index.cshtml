@@ -1,0 +1,39 @@
+﻿
+<div class="text-left">
+
+    <div>
+        <h1>Dados dos Professores</h1>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Contato</th>
+                <th scope="col">Email</th>
+                <th scope="col">Cep</th>
+                <th scope="col">Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Katia Schimidt</td>
+                <td>28 anos</td>
+                <td>(47)99177-4897</td>
+                <td>katiaschimidt@gmail.com</td>
+                <td>88350-665</td>
+                <td>
+                    <div class="d-grid gap-2 d-md-block">
+                        <a class="btn btn-primary" type="button" asp-controller="Professor" asp-action="BuscarEndereco" asp-route-cep="88350-665">Endereço</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-grid gap-2 d-md-flex justify-content-center">
+        <a class="btn btn-primary" type="button" asp-controller="Professor" asp-action="Adicionar">Adicionar Novo Professor</a>
+    </div>
+</div>
